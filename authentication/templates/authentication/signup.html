@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Authentication</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet", href="">
+</head>
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tag }} alert_dismissible fade show" role="alert">
+    <strong>Message:</strong> {{ message }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+        <samp aria-hidden="true">&times;</samp>
+    </button>
+    </div>
+    {% endfor %}
+    <h3>SignUp</h3>
+    <form action="/signup" method="post">
+        {% csrf_token %}
+        <label form="">Username</label>
+        <input type="text" id="username" name="username" placeholder="Create a username (only letters and numbers)" Reauired>
+        <br>
+
+        <label form="">First Name</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your first name" Reauired>
+        <br>
+        <label form="">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter your last name" Reauired>
+        <br>
+        <label form="">Email Address</label>
+        <input type="email" id="Email" name="Email" placeholder="Enter your Email" Reauired>
+        <br>
+        <label form="">Password</label>
+        <input type="password" id="pass1" name="pass1" placeholder="Create a Password" Reauired>
+        <br>
+        <label form="">Confirm your password</label>
+        <input type="password" id="pass2" name="pass2" placeholder="Confirm password" Reauired>
+        <br>
+        <button type="submit">Sign Up</button>
+
+    </form>
+
+    <script src="" async defer></script>
+</body>
+</html>
